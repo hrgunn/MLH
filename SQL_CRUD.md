@@ -80,7 +80,7 @@
 	* Song
 	* Album
 * Remember to think big to small
-* Check out [draw.io](https://www.draw.io/) to help with your ERD's later on in the course
+* Check out [SQL Visualizer](http://ondras.zarovi.cz/sql/demo/) to help with your ERD's later on in the course
 
 ***Notes***
 
@@ -227,7 +227,7 @@ DELETE FROM william WHERE character = "Mugatu"
 
 #### Part 4 - Resources
 
-- [ERD Draw IO](https://www.draw.io/)
+- [SQL Visualizer](http://ondras.zarovi.cz/sql/demo/)
 - [Beginner SQL Tutorial](http://beginner-sql-tutorial.com/sql-query-tuning.htm)
 - [SQL Course](http://www.sqlcourse.com/)
 
