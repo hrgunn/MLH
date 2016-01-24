@@ -22,5 +22,5 @@
 
 ![](https://s3.amazonaws.com/nettuts/613_mvc/diagram.jpg)
 
-
-
+#### Required Reading
+[https://study.cs50.net/mvc](https://study.cs50.net/mvc)
