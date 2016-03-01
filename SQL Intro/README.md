@@ -40,22 +40,24 @@
 
 * There are different types of databases out there.
 * For the purposes of this class we will be learning to use SQL which is a relational database
-* Relational Databases allow us to store information in the form of `tables`, and each table has `rows`, and `columns`
+* Relational Databases allow us to store information in the form of `tables`
+* Each table has `rows`, and `columns`
 * Visualize a csv file, or even a microsoft excel file. 
 * Imagine a school database: we may have the following tables
 	* Faculty
 	* Staff
 	* Students
 * Each table will have columns and rows
-* The columns will be specific to the table they below to. They are usually attributes. (first name, last name, date of birth, etc.)
-* The rows will be populating the table with information that follows the column format.
+* The columns will be specific to the table they belong to. 
+* Columns are usually attributes. (first name, last name, date of birth, etc.)
+* The rows will be populating the table with information formatted to follow the column format.
 
 #### Part 2 - Database Visualization / Planning
 
 * No more imagining things. Let's build an ERD
-* ERD: Entity-Relationship Diagram
+* ERD stands for Entity-Relationship Diagram
 * We use ERD's to draw out a representation of our database. 
-* Draw out the ERD of the school example above
+* Lets draw out the ERD of our school example above
 * You want to start from large to small. 
 	* Think about how you can break up the data and what the tables will be
 	* What columns will each table have?
@@ -94,12 +96,13 @@
 
 * So we've talked about databases, and we've drawn them out. 
 * Time to make a database and talk to it
+* To build our database we will be using SQLite3
 
 ***SQL***
 
-* For that we'll use SQLite3
 * SQL - Structured Query Language
 * It's main and only purpose is the management of relational databases
+* Below are two terms that is not necessary to help you in programming but is fun to know a little about. 
 	* DSL - What is a DSL? DSL stands for Domain Specific Language
 	* GPL - What is a GPL? GPL stands for General Purpose Language
 
@@ -124,6 +127,7 @@
 #### Part 4 - Let's Begin CRUDDING!!! (Create and Read)
 
 * Lets make a new folder outside of your byte academy folder
+	* You can copy and paste the class example into the daily repo later if you want a reference. However everything in that example will be in this lesson plan. 
 * Now lets `cd` into that folder and make a new database
 * The syntax to create a database in SQLite3 is just `sqlite3 database_name`
 
@@ -140,7 +144,7 @@ sqlite3 Ferrall.db
 CREATE TABLE william (id INTEGER PRIMARY KEY, character TEXT, movie TEXT, year INTEGER);
 ```
 * The semi colon at the end is a necessity. It tells sql that you are done with that command. 
-* Commands in SQL should be writte in all CAPS. This is to distinguish them from your databases names and columns. In some SQL languages this is enforced. In SQLite3 it's the wild west. 
+* Commands in SQL should be written in all CAPS. This is to distinguish them from your databases names and columns. In some SQL languages this is enforced. In SQLite3 it's the wild west. 
 * `william` is the name of the table we just created
 * `id` / `character` / `movie` are the names of the column
 * They are defined by capitalized `INTEGER`, `TEXT`, and `INTEGER`
@@ -165,7 +169,11 @@ SELECT * FROM william;
 * You just did the `R` in CRUD with the `SELECT` statement
 * The `splat` in the above command tells us to grab everything from the table william
 * Okay so now it's your turn to add more items to the databse
+
+***Five Min Exercise***
+
 * Fill out your william table with the below values exactly as is
+* Yes I know some of these are incorrect or have typos or are the same. We're going to be fixing them later on
 
 | Character              | Movie            | Year |
 |------------------------|------------------|------|
@@ -186,8 +194,8 @@ SELECT * FROM william;
 * How can we select values that have the same attribute?
 
 ```
-SELECT * FROM william WHERE year = 2012
-SELECT * FROM william WHERE character = "Allen Gamble"
+SELECT * FROM william WHERE year = 2012;
+SELECT * FROM william WHERE character = "Allen Gamble";
 ```
 * The `WHERE` statement allows us to add conditionals to our queries. We will be using `WHERE` in areas other than `READ/SELECT`
 * Alright so we got the `CR` in CRUD
@@ -196,9 +204,9 @@ SELECT * FROM william WHERE character = "Allen Gamble"
 * Let's change the one that belongs to the movie "semi-pro" to the actual character name "Jackie Moon"
 
 ```
-UPDATE william SET character = "Jackie Moon" WHERE movie = "Semi-Pro"
+UPDATE william SET character = "Jackie Moon" WHERE movie = "Semi-Pro";
 ```
-* Be careful with not using a unique identifier for the WHERE statement. You wll be editing all of the values that pass the conditions parameter
+* Be careful with not using a unique identifier for the WHERE statement. You will be editing all of the values that pass the conditions parameter
 * For example lets run another update
 
 ```
@@ -214,7 +222,7 @@ UPDATE william SET character="Cam Brady" WHERE id = 2;
 
 UPDATE william SET character = "Chazz Michael Michaels" WHERE id = 9;
 
-Update william SET movie = "Blades of Glory" WHERE id = 9
+Update william SET movie = "Blades of Glory" WHERE id = 9;
 ```
 * Alright enought practice with Update
 * Let's cover Delete
