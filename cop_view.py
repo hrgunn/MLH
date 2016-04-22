@@ -8,7 +8,6 @@ class Game():
         self.player = None
         self.view = View()
 
-
 class mission(object):
     """docstring for mission"""
     def __init__(self, arg):
